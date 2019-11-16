@@ -1,0 +1,10 @@
+:host {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid green;
+}
+
+article {
+  height: 100vh;
+  overflow-y: scroll;
+}

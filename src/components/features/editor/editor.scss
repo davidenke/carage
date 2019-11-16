@@ -1,0 +1,27 @@
+@import '../../../styles/styles';
+
+:host {
+  border-top-left-radius: var(--base-size);
+  border-top-right-radius: var(--base-size);
+}
+
+.card {
+  height: 100%;
+  padding: calc(var(--base-size) * 3) var(--base-size) 0;
+}
+
+form {
+  @include hide-scrollbars();
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-x: scroll;
+}
+
+.input {
+  margin-bottom: var(--base-size);
+}
+
+.submit {
+  margin-top: var(--base-size);
+}

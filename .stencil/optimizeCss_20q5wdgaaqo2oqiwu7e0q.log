@@ -1,0 +1,5 @@
+img {
+  border-radius: calc(var(--base-size) / 2);
+  height: auto;
+  width: 100%;
+}

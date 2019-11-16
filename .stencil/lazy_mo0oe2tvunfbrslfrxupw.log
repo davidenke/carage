@@ -1,0 +1,21 @@
+import { registerInstance as __stencil_registerInstance, createEvent as __stencil_createEvent } from "@stencil/core";
+import { h } from "@stencil/core";
+export const Editor = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.close = __stencil_createEvent(this, "close", 7);
+    }
+    renderInput(property, { type, label, required }) {
+        const Input = `carage-edit-${type}`;
+        return (h(Input, { class: "input", required: required, value: this.model[property], valueChanged: value => this.model[property] = value }, label || property));
+    }
+    renderInputs(model) {
+        const metadata = model.getMetadata();
+        const entries = Array.from(metadata.entries());
+        return entries.map(([property, type]) => this.renderInput(property, type));
+    }
+    render() {
+        return (h("carage-card", { class: "card", closable: true, onClose: () => this.close.emit() }, h("form", null, this.renderInputs(this.model), h("carage-button", { class: "submit", expand: true, onClick: () => this.model.save() }, "save"))));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-editor"; }
+};

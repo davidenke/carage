@@ -1,0 +1,41 @@
+article {
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+article::-webkit-scrollbar {
+  width: 0 !important;
+}
+article {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+h1, h2, p, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px;
+  background: var(--color-light);
+}
+@media (prefers-color-scheme: dark) {
+  p {
+    background: var(--color-dark);
+  }
+}
+
+dt {
+  display: none;
+}
+
+.edit {
+  position: absolute;
+  bottom: auto;
+  left: auto;
+  right: 10px;
+  top: 10px;
+}

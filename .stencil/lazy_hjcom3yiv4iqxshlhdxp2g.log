@@ -1,0 +1,25 @@
+import { registerInstance as __stencil_registerInstance, createEvent as __stencil_createEvent } from "@stencil/core";
+import { h, Host } from "@stencil/core";
+import { formatDateInput } from '../../utils/date.utils';
+export const EditDate = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.disabled = false;
+        this.required = false;
+        this.errored = false;
+        this.placeholder = '';
+        this.inputChange = __stencil_createEvent(this, "inputChange", 7);
+    }
+    handleInput(event) {
+        const { value } = event.target;
+        this.inputChange.emit(new Date(value));
+    }
+    render() {
+        return (h(Host, { class: {
+                disabled: this.disabled,
+                errored: this.errored,
+                required: this.required
+            } }, h("label", null, h("span", { class: "label" }, h("slot", null)), h("input", { class: "input", type: "number", value: formatDateInput(this.value), disabled: this.disabled, required: this.required, placeholder: this.placeholder, onInput: event => this.handleInput(event) }))));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-edit-date"; }
+};

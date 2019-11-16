@@ -1,0 +1,29 @@
+@import '../../../styles/styles';
+
+:host {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  scroll-behavior: smooth;
+
+  @media (pointer: coarse) {
+    @include hide-scrollbars();
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  ::slotted(*),
+  > * {
+    flex: 1 0 100%;
+    height: 100vh;
+    width: 100vw;
+
+    @media (pointer: coarse) {
+      scroll-snap-align: start;
+      overflow: visible;
+    }
+  }
+}

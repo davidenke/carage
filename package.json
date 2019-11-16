@@ -1,0 +1,28 @@
+{
+  "name": "carage",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Manage your cars",
+  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --docs --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test:watch": "stencil test --spec --e2e --watch",
+    "generate": "ts-node --compiler-options '{\"module\":\"commonjs\"}' scripts/generate"
+  },
+  "dependencies": {
+    "typeface-montserrat": "0.0.75"
+  },
+  "devDependencies": {
+    "@stencil/core": "1.8.1",
+    "@stencil/sass": "1.1.1",
+    "@stencil/postcss": "1.0.1",
+    "@types/node": "12.12.8",
+    "autoprefixer": "9.7.1",
+    "ts-node": "8.5.2"
+  }
+}

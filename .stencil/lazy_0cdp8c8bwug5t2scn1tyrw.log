@@ -1,0 +1,13 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+import { formatDate } from '../../utils/date.utils';
+export const Car = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.isEditing = false;
+    }
+    render() {
+        return (h("article", null, h("img", { src: this.model.image, alt: this.model.name }), h("p", null, h("h1", null, this.model.name), h("h2", null, this.model.licensePlate), h("dl", null, h("dt", null, "identification"), h("dd", null, this.model.vin), h("dt", null, "key code"), h("dd", null, this.model.keyCode), h("dt", null, "registration date"), h("dd", null, formatDate(this.model.registrationDate)), h("dt", null, "power"), h("dd", null, this.model.powerKW, "kW (", this.model.powerPS, "PS)"))), h("carage-button", { class: "edit", onClick: () => this.isEditing = !this.isEditing }, "edit"), h("carage-editor", { model: this.model })));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-car"; }
+};

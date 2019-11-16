@@ -1,0 +1,36 @@
+:host {
+  border-top-left-radius: var(--base-size);
+  border-top-right-radius: var(--base-size);
+}
+
+.card {
+  height: 100%;
+  padding: var(--base-size) var(--base-size) 0;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  overflow-x: scroll;
+}
+form::-webkit-scrollbar {
+  width: 0 !important;
+}
+form {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+.input {
+  margin-bottom: var(--base-size);
+}
+
+.submit {
+  margin-top: var(--base-size);
+}

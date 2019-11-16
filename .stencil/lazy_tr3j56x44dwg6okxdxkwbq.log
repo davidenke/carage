@@ -1,0 +1,27 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+import { CarModel } from '../../models/car.model';
+export const Root = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.mockedCars = [
+            new CarModel({
+                image: '',
+                manufacturer: 'SAAB',
+                model: '900i',
+                registrationDate: new Date(1989, 7, 2),
+                licensePlate: 'DD-OG 900H',
+                designType: 'Fließheck (FLH)',
+                powerKW: '',
+                capacity: number,
+                vin: string,
+                manufacturerKey: string,
+                modelCode: string
+            })
+        ];
+    }
+    render() {
+        return (h("carage-cars", null, h("carage-car-create", null), this.mockedCars.map(car => (h("carage-car-detail", { model: car })))));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-root"; }
+};

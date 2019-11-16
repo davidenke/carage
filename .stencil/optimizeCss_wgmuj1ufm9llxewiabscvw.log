@@ -1,0 +1,21 @@
+:host {
+  color: var(--co);
+}
+
+article {
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+article::-webkit-scrollbar {
+  width: 0 !important;
+}
+article {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+h1, h2, p, dl {
+  margin: 0;
+  padding: 0;
+}

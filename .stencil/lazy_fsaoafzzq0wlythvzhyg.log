@@ -1,0 +1,26 @@
+import { registerInstance as __stencil_registerInstance, createEvent as __stencil_createEvent } from "@stencil/core";
+import { h, Host } from "@stencil/core";
+export const EditText = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.multiline = false;
+        this.disabled = false;
+        this.required = false;
+        this.errored = false;
+        this.placeholder = '';
+        this.update = __stencil_createEvent(this, "update", 7);
+    }
+    handleInput(event) {
+        const { value } = event.target;
+        this.update.emit(value);
+    }
+    render() {
+        return (h(Host, { class: {
+                multiline: this.multiline,
+                disabled: this.disabled,
+                errored: this.errored,
+                required: this.required
+            } }, h("label", null, h("span", { class: "label" }, h("slot", null)), this.multiline ? (h("textarea", { class: "input", disabled: this.disabled, required: this.required, placeholder: this.placeholder, onInput: event => this.handleInput(event) }, this.value)) : (h("input", { class: "input", type: "text", disabled: this.disabled, required: this.required, placeholder: this.placeholder, value: this.value, onInput: event => this.handleInput(event) })))));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-edit-text"; }
+};

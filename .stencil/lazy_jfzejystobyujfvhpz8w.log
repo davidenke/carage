@@ -1,0 +1,25 @@
+import { registerInstance as __stencil_registerInstance, createEvent as __stencil_createEvent } from "@stencil/core";
+import { h } from "@stencil/core";
+import { Model } from '../../utils/model.utils';
+class Test extends Model {
+}
+export const Editor = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.close = __stencil_createEvent(this, "close", 7);
+    }
+    componentWillLoad() {
+    }
+    renderInput(property, type) {
+        switch (type) {
+            default:
+                return (h("input", { type: "text", name: property, value: property }));
+        }
+    }
+    render() {
+        return (h("carage-card", { class: "card", closable: true, onClose: () => this.close.emit() }, h("form", null, Object
+            .entries(this.model.getMetadata())
+            .map(([property, type]) => this.renderInput(property, type)))));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-editor"; }
+};

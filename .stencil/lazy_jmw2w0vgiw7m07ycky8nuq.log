@@ -1,0 +1,24 @@
+import { registerInstance as __stencil_registerInstance, createEvent as __stencil_createEvent } from "@stencil/core";
+import { h, Host } from "@stencil/core";
+export const EditNumber = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.disabled = false;
+        this.required = false;
+        this.errored = false;
+        this.placeholder = '';
+        this.update = __stencil_createEvent(this, "update", 7);
+    }
+    handleInput(event) {
+        const { value } = event.target;
+        this.update.emit(parseInt(value));
+    }
+    render() {
+        return (h(Host, { class: {
+                disabled: this.disabled,
+                errored: this.errored,
+                required: this.required
+            } }, h("label", null, h("span", { class: "label" }, h("slot", null)), h("input", { class: "input", type: "number", disabled: this.disabled, required: this.required, placeholder: this.placeholder, value: this.value, onInput: event => this.handleInput(event) }))));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-edit-number"; }
+};

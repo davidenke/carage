@@ -1,0 +1,7 @@
+@mixin shadow($size: 15px, $offset: 5px) {
+  box-shadow: 0 $offset $size 0 transparentize(black, .5);
+
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 $offset $size 0 transparentize(black, .25);
+  }
+}

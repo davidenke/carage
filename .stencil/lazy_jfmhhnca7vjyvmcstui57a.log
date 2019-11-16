@@ -1,0 +1,31 @@
+import { registerInstance as __stencil_registerInstance, createEvent as __stencil_createEvent } from "@stencil/core";
+import { h, Host } from "@stencil/core";
+export const EditImage = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.disabled = false;
+        this.required = false;
+        this.errored = false;
+        this.placeholder = '';
+        this.valueChange = __stencil_createEvent(this, "valueChange", 7);
+    }
+    handleInput(event) {
+        const { files } = event.target;
+        const reader = new FileReader();
+        reader.addEventListener('load', () => {
+            this.value = reader.result.toString();
+            this.valueChange.emit(this.value);
+        }, false);
+        if (files[0]) {
+            reader.readAsDataURL(files[0]);
+        }
+    }
+    render() {
+        return (h(Host, { class: {
+                disabled: this.disabled,
+                errored: this.errored,
+                required: this.required
+            } }, h("label", null, h("span", { class: "label" }, h("slot", null)), h("input", { class: "input", type: "file", accept: "image/*", disabled: this.disabled, required: this.required, placeholder: this.placeholder, onChange: event => this.handleInput(event) })), h("img", { src: this.value, alt: "" })));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-edit-image"; }
+};

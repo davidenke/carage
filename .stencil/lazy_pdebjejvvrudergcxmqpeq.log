@@ -1,0 +1,15 @@
+import { registerInstance as __stencil_registerInstance, createEvent as __stencil_createEvent } from "@stencil/core";
+import { h } from "@stencil/core";
+export const card = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.close = __stencil_createEvent(this, "close", 7);
+    }
+    render() {
+        return [
+            h("slot", null),
+            h("carage-button", { class: "close", onClick: () => this.close.emit() }, "close")
+        ];
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-card"; }
+};
