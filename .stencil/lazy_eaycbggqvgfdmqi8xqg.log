@@ -1,0 +1,46 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+import { CarModel } from '../../models/car.model';
+import { load } from '../../utils/storage.utils';
+export const Root = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.cars = [];
+    }
+    // mockedCars: CarModel[] = [
+    //   new CarModel({
+    //     manufacturer: 'SAAB',
+    //     model: '900i',
+    //     registrationDate: new Date(1989, 7, 2),
+    //     licensePlate: 'DD-OG 900H',
+    //     designType: 'Fließheck (FLH)',
+    //     powerKW: 81,
+    //     capacity: 1985,
+    //     vin: 'YS3AB55J9J7027440',
+    //     manufacturerKey: '9107',
+    //     modelCode: '321'
+    //   }),
+    //   new CarModel({
+    //     manufacturer: 'BMW',
+    //     model: '525iA Touring',
+    //     registrationDate: new Date(2005, 8, 27),
+    //     licensePlate: 'DD-ZD 9137',
+    //     designType: 'Kombi (NL51)',
+    //     powerKW: 160,
+    //     capacity: 2497,
+    //     vin: 'WBANL51050CN07688',
+    //     manufacturerKey: '0005',
+    //     modelCode: '839'
+    //   })
+    // ];
+    componentWillLoad() {
+        this.cars = (load('cars') || [])
+            .map(vin => load(vin))
+            .map(car => new CarModel(car));
+        console.log(this.cars);
+    }
+    render() {
+        return (h("carage-cars", null, this.cars.map(car => (h("carage-car", { model: car })))));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-root"; }
+};

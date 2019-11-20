@@ -11,13 +11,15 @@ const componentPath = resolve(__dirname, '../src/components');
 const { argv, exit } = process;
 const [, , component, force = false] = argv;
 
+const camelCase = (string: string): string => {
+  return string.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+};
+
 const createDirectory = async (path: string) => {
   return mkdirAsync(path);
 };
 
 const createComponent = async (path: string, component: string) => {
-  const name = component.charAt(0)
-    .toUpperCase() + component.slice(1);
   return writeFileAsync(path, `import { Component, ComponentInterface, h } from '@stencil/core';
 
 @Component({
@@ -25,7 +27,7 @@ const createComponent = async (path: string, component: string) => {
   styleUrl: '${ component }.scss',
   shadow: true
 })
-export class ${ name } implements ComponentInterface {
+export class ${ camelCase(component) } implements ComponentInterface {
 
   render() {
     return (

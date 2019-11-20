@@ -1,0 +1,8 @@
+:host {
+  background: #ccc;
+}
+@media (prefers-color-scheme: dark) {
+  :host {
+    background: #313131;
+  }
+}

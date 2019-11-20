@@ -1,0 +1,24 @@
+@import '../../../styles/styles';
+
+:host {
+  @include animate(transform);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+:host(.is-creating) {
+  transform: translateX(110vw);
+}
+
+.create {
+  @include position(absolute, var(--base-size) auto auto var(--base-size));
+}
+
+.creator {
+  @include position(absolute, 0 auto 0 -110vw);
+  display: block;
+  height: 100vh;
+  width: 100vw;
+}

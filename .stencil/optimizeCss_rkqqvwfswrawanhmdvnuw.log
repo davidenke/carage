@@ -1,0 +1,41 @@
+:host {
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
+:host(.is-creating) {
+  -webkit-transform: translateX(110vw);
+          transform: translateX(110vw);
+}
+
+.create {
+  position: absolute;
+  bottom: auto;
+  left: var(--base-size);
+  right: auto;
+  top: var(--base-size);
+}
+
+.creator {
+  position: absolute;
+  bottom: 0;
+  left: -110vw;
+  right: auto;
+  top: 0;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+}

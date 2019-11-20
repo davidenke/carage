@@ -1,0 +1,24 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+import { formatDate } from '../../utils/date.utils';
+export const Car = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.isEditing = false;
+    }
+    openEditor() {
+        this.isEditing = true;
+    }
+    closeEditor() {
+        this.isEditing = false;
+    }
+    save(model) {
+        this.model = model;
+        this.model.save();
+        this.closeEditor();
+    }
+    render() {
+        return (h("article", { class: { 'is-editing': this.isEditing } }, h("img", { src: this.model.image, alt: this.model.name }), h("carage-card", { class: "details" }, h("h2", null, this.model.licensePlate), h("h1", null, this.model.name), h("dl", null, h("dt", null, "identification"), h("dd", null, this.model.vin), h("dt", null, "key code"), h("dd", null, this.model.keyCode), h("dt", null, "registration date"), h("dd", null, formatDate(this.model.registrationDate)), h("dt", null, "power"), h("dd", null, this.model.powerKW, "kW (", this.model.powerPS, "PS)"))), h("carage-button", { class: "edit", onClick: () => this.openEditor() }, "edit"), h("carage-editor", { class: "editor", model: this.model.clone(), onClose: () => this.closeEditor(), onSave: ({ detail }) => this.save(detail) })));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-car"; }
+};

@@ -1,0 +1,11 @@
+:host {
+  border-top-left-radius: var(--base-size);
+  border-top-right-radius: var(--base-size);
+  padding: calc(var(--base-size) * 2);
+  background: var(--color-light);
+}
+@media (prefers-color-scheme: dark) {
+  :host {
+    background: var(--color-dark);
+  }
+}

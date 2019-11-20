@@ -1,0 +1,8 @@
+:host {
+  border-top-left-radius: var(--base-size);
+  border-top-right-radius: var(--base-size);
+}
+
+.card {
+  min-height: 100vh;
+}

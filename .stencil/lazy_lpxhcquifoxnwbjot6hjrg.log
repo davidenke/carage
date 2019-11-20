@@ -1,0 +1,11 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+export const editImage = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+    }
+    render() {
+        return (h("img", { src: this.value, alt: "" }));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-edit-image"; }
+};

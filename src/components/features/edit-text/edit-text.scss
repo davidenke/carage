@@ -1,0 +1,8 @@
+@import '../../../styles/styles';
+
+@include input();
+
+textarea {
+  min-height: 225px;
+  resize: vertical;
+}

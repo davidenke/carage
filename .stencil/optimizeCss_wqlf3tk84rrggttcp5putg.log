@@ -1,0 +1,17 @@
+:host {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid green;
+}
+
+article {
+  height: 100vh;
+  overflow-y: scroll;
+}
+article::-webkit-scrollbar {
+  width: 0 !important;
+}
+article {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}

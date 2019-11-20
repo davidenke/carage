@@ -1,0 +1,11 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h, Host } from "@stencil/core";
+export const carDetail = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+    }
+    render() {
+        return (h(Host, null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null, "lorem", h("br", null), "); } }")))))))))))))))))))))))))))))))))))))))))))))))))))))))))))));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-car-detail"; }
+};

@@ -4,6 +4,14 @@
   --font-face-default: 'Montserrat', sans-serif;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+
+  --color-light: #fefefe;
+  --color-medium: #afafaf;
+  --color-dark: #313131;
+  --color-accent: #4db3ff;
+  --color-error: #ff7c70;
+
+  --base-size: 10px;
 }
 
 @include font-provider();
@@ -17,7 +25,7 @@ body {
   // sass-lint:disable property-sort-order no-vendor-prefixes
   -webkit-tap-highlight-color: var(--color-transparent);
   -webkit-touch-callout: none;
-  min-height: 100%; // [1]
+  min-height: 100vh; // [1]
 
   -webkit-text-size-adjust: 100%; // [2]
   -ms-text-size-adjust: 100%; // [2]
@@ -28,12 +36,22 @@ body {
 
 html {
   font-size: 10px;
+  overflow: hidden;
+
+  background: var(--color-light);
+  color: var(--color-dark);
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--color-dark);
+    color: var(--color-light);
+  }
 }
 
 body {
   font-family: var(--font-face-default);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   margin: 0;
   padding: 0;

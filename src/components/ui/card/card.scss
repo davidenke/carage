@@ -1,0 +1,23 @@
+@import '../../../styles/styles';
+
+:host {
+  @include shadow($offset: 0);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--base-size) * 2);
+  position: relative;
+
+  border-top-left-radius: var(--base-size);
+  border-top-right-radius: var(--base-size);
+
+  background: var(--color-light);
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--color-dark);
+  }
+}
+
+.close {
+  @include position(absolute, var(--base-size) var(--base-size) auto auto);
+}

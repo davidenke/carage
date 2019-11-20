@@ -1,0 +1,12 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+export const Button = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.expand = false;
+    }
+    render() {
+        return (h("button", { type: "button", class: { expand: this.expand } }, h("slot", null)));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-button"; }
+};

@@ -1,0 +1,15 @@
+button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  border-radius: 10px;
+  background: var(--color-accent);
+  color: var(--color-light);
+  outline: 0;
+  margin: 0;
+  padding: 5px 10px;
+}
+:host(.expand) button {
+  width: 100%;
+}

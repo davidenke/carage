@@ -1,0 +1,18 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+export const carDetail = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.image = 'default image';
+    }
+    get name() {
+        return `${this.brand} ${this.model}`;
+    }
+    get powerPS() {
+        return this.powerKW * 1.35962;
+    }
+    render() {
+        return (h("article", null, h("img", { src: this.image, alt: this.name }), h("h1", null, this.name), h("h2", null)));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:carage-car-detail"; }
+};

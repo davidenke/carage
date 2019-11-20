@@ -1,6 +1,6 @@
 @import './font-face.mixin.scss';
 
 @mixin font-provider() {
-  @include font-face(Montserrat, '/assets/fonts/montserrat-latin-400', var(--font-weight-regular), normal);
-  @include font-face(Montserrat, '/assets/fonts/montserrat-latin-500', var(--font-weight-medium), normal);
+  @include font-face(Montserrat, '/assets/fonts/montserrat-latin-400', 400, normal);
+  @include font-face(Montserrat, '/assets/fonts/montserrat-latin-500', 500, normal);
 }
