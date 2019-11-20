@@ -1,4 +1,5 @@
 .env
+.stencil/
 dist/
 www/
 node_modules/
