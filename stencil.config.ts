@@ -3,12 +3,15 @@ import { sass } from '@stencil/sass';
 import { postcss } from '@stencil/postcss';
 import autoprefixer from 'autoprefixer';
 
+const isDevelopment = process.argv && process.argv.includes('--dev');
+
 // https://stenciljs.com/docs/config
 export const config: Config = {
   globalStyle: 'src/styles/global.scss',
   namespace: 'carage',
   outputTargets: [
     {
+      baseUrl: isDevelopment ? '/' : 'carage/',
       copy: [
         {
           src: '../node_modules/typeface-montserrat/files',
