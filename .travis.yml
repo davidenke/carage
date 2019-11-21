@@ -24,7 +24,8 @@ jobs:
         # create the target
         - mkdir -p ./gh-pages
         # copy the built folder to target
-        - cp -R www/ ./gh-pages
+        - cp -R www/* ./gh-pages
+        - cp -R README.md ./gh-pages
 
     - stage: github pages
       if: branch = master
