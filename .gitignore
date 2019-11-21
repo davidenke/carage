@@ -1,5 +1,6 @@
 .env
 .stencil/
+gh-pages/
 dist/
 www/
 node_modules/

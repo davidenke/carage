@@ -22,10 +22,9 @@ jobs:
         # build polyfill
         - npm run build
         # create the target
-        - mkdir -p ./gh-pages/dist
-        # copy the built folder and html to target
-        - cp -R dist/* ./gh-pages/dist
-        - cp index.html README.md ./gh-pages
+        - mkdir -p ./gh-pages
+        # copy the built folder to target
+        - cp -R www ./gh-pages
 
     - stage: github pages
       if: branch = master
