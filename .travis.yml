@@ -21,11 +21,12 @@ jobs:
       script:
         # build polyfill
         - npm run build
-        # create the target
+        # re-create the target
+        - rm -rf ./gh-pages
         - mkdir -p ./gh-pages
         # copy the built folder to target
-        - cp -R www/* ./gh-pages
-        - cp -R README.md ./gh-pages
+        - cp -R ./www/* ./gh-pages
+        - cp -R ./README.md ./gh-pages
 
     - stage: github pages
       if: branch = master
