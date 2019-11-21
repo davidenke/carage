@@ -1,1 +1,0 @@
-function n(n){return n.toString().padStart(2,"0")}function r(r){return`${n(r.getDate())}.${n(r.getMonth()+1)}.${r.getFullYear()}`}function t(r){return`${r.getFullYear()}-${n(r.getMonth()+1)}-${n(r.getDate())}`}export{r as a,t as f};
