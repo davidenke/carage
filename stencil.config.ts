@@ -11,11 +11,14 @@ export const config: Config = {
   namespace: 'carage',
   outputTargets: [
     {
-      baseUrl: isDevelopment ? '/' : 'carage/',
       copy: [
         {
           src: '../node_modules/typeface-montserrat/files',
           dest: 'assets/fonts'
+        },
+        {
+          src: isDevelopment ? 'index.dev.html' : 'index.prod.html',
+          dest: 'index.html'
         }
       ],
       serviceWorker: null,
